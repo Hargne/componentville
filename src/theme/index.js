@@ -7,5 +7,5 @@ export {
 	utils,
 	layout,
 	typography,
-	colors
+	colors,
 };

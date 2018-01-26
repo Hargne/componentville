@@ -24,7 +24,7 @@ Button.propTypes = {
 	disabled: PropTypes.bool,
 	onClick: PropTypes.func,
 	fullWidth: PropTypes.bool,
-	size: PropTypes.oneOf(buttonSizes)
+	size: PropTypes.oneOf(buttonSizes),
 };
 
 export default Button;
