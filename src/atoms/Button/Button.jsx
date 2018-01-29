@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledButton from './Button.style';
+import ButtonStyle from './Button.style';
 
 const Button = ({ children, ...props }) => (
-	<StyledButton {...props}>
+	<ButtonStyle.Button {...props}>
 		{children}
-	</StyledButton>
+	</ButtonStyle.Button>
 );
 
 const buttonSizes = ['xs', 'sm', 'md', 'lg'];
 Button.sizes = buttonSizes;
+Button.style = ButtonStyle;
 
 Button.propTypes = {
 	children: PropTypes.node,

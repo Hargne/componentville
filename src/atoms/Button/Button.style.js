@@ -36,7 +36,7 @@ const StyleBySize = (size) => {
 	}
 };
 
-export default styled('button')`
+const Button = styled('button')`
 	text-transform: none;
 	cursor: pointer;
 	border: 0;
@@ -55,3 +55,7 @@ export default styled('button')`
 		cursor: not-allowed; 
 	`}
 `;
+
+export default {
+	Button,
+};
