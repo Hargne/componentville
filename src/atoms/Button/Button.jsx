@@ -1,20 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StyledButton from './Button.style';
 
-import { ButtonStyle } from './Button.style';
+const Button = ({ children, ...props }) => (
+	<StyledButton {...props}>
+		{children}
+	</StyledButton>
+);
 
-export const buttonSizes = ['xs', 'sm', 'md', 'lg'];
-
-const Button = ({
-	children,
-	...props
-}) => {
-	return (
-		<ButtonStyle {...props}>
-			{children}
-		</ButtonStyle>
-	);
-};
+const buttonSizes = ['xs', 'sm', 'md', 'lg'];
+Button.sizes = buttonSizes;
 
 Button.propTypes = {
 	children: PropTypes.node,
@@ -25,6 +20,10 @@ Button.propTypes = {
 	onClick: PropTypes.func,
 	fullWidth: PropTypes.bool,
 	size: PropTypes.oneOf(buttonSizes),
+};
+
+Button.defaultProps = {
+	size: 'sm',
 };
 
 export default Button;

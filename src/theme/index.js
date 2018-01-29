@@ -1,11 +1,11 @@
 import utils from './utils';
 import layout from './layout';
 import typography from './typography';
-import colors from './colors';
+import colorScheme from './colorScheme';
 
 export {
 	utils,
 	layout,
 	typography,
-	colors,
+	colorScheme,
 };

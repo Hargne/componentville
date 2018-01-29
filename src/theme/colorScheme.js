@@ -9,19 +9,7 @@ export const ColourScheme = {
 	info: '#0097FD',
 	// Black - White Colors
 	black: '#111',
-	white: '#fff'
-}
-
-export const getColorSchemeNames = () => Object.keys(ColourScheme);
-export const getColorSchemeColor = (key) => ColourScheme[key];
-
-const GenerateFullColorScheme = (scheme) => {
-	const fullScheme = {};
-	for (const item in scheme) {
-		const color = Color(scheme[item]);
-		fullScheme[item] = new SchemeColor(scheme[item]);
-	}
-	return fullScheme;
+	white: '#fff',
 };
 
 class SchemeColor {
@@ -46,5 +34,19 @@ class SchemeColor {
 		return (theColor.isLight()) ? ColourScheme.black : ColourScheme.white;
 	}
 }
+
+const GenerateFullColorScheme = (scheme) => {
+	const fullScheme = {};
+	if (scheme) {
+		Object.keys(scheme).map(item => {
+			fullScheme[item] = new SchemeColor(scheme[item]);
+			return true;
+		});
+	}
+	return fullScheme;
+};
+
+export const getColorSchemeNames = () => Object.keys(ColourScheme);
+export const getColorSchemeColor = (key) => ColourScheme[key];
 
 export default GenerateFullColorScheme(ColourScheme);

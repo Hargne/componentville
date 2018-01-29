@@ -19,6 +19,6 @@ export default {
 	},
 	border: {
 		radius: '0.5rem',
-		width: '0.2rem'
-	}
+		width: '0.2rem',
+	},
 };

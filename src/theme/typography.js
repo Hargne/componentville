@@ -1,6 +1,6 @@
 export default {
 	fonts: {
-		base: '"Myriad", sans-serif'
+		base: '"Myriad", sans-serif',
 	},
 	sizes: {
 		text: {
@@ -8,7 +8,7 @@ export default {
 			md: '16px',
 			sm: '14px',
 			xs: '12px',
-			xxs: '10px'
+			xxs: '10px',
 		},
 		heading: {
 			h1: '36px',
@@ -16,7 +16,7 @@ export default {
 			h3: '21px',
 			h4: '20px',
 			h5: '18px',
-			h6: '18px'
-		}
-	}
+			h6: '18px',
+		},
+	},
 };

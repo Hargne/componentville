@@ -1,15 +1,30 @@
 const LightenDarkenColor = (color, percent) => {
-	var num = parseInt(color,16),
-	  amt = Math.round(2.55 * percent),
-	  R = (num >> 16) + amt,
-	  B = (num >> 8 & 0x00FF) + amt,
-	  G = (num & 0x0000FF) + amt;
+	const num = parseInt(color, 16);
+	const amt = Math.round(2.55 * percent);
+	const R = (num >> 16) + amt; // eslint-disable-line no-bitwise
+	const B = (num >> 8 & 0x00FF) + amt; // eslint-disable-line no-bitwise
+	const G = (num & 0x0000FF) + amt; // eslint-disable-line no-bitwise
 
-	  return (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
+	const LimitRange = (inputValue) => {
+		if (R > 255) {
+			return 255;
+		} else if (R < 0) {
+			return 0;
+		}
+		return inputValue;
+	};
+
+	return (
+		0x1000000 + LimitRange(R)
+		* 0x10000 + LimitRange(G)
+		* 0x100 + LimitRange(B)
+	)
+		.toString(16)
+		.slice(1);
 };
 
-const DarkenColor = ({color, amount}) => `#${LightenDarkenColor(color, `-${amount}` || -10)}`;
-const LightenColor = ({color, amount}) => `#${LightenDarkenColor(color, `${amount}` || 10)}`;
+const DarkenColor = ({ color, amount }) => `#${LightenDarkenColor(color, `-${amount}` || -10)}`;
+const LightenColor = ({ color, amount }) => `#${LightenDarkenColor(color, `${amount}` || 10)}`;
 
 export default {
 	DarkenColor,
