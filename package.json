@@ -4,7 +4,8 @@
   "description": "A Component Library",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook -s ./"
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/Hargne/componentville#readme",
   "dependencies": {
     "color": "^3.0.0",
+    "html-creator": "^0.4.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -36,6 +38,8 @@
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
     "babel-minify": "^0.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "emotion": "^8.0.12",
@@ -48,6 +52,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^8.0.12",
+    "rollup": "^0.55.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
     "webpack": "^3.6.0"
   }
 }
